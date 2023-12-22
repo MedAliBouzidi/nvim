@@ -13,8 +13,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- New tab
 keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<A-RIGHT>", ":tabnext<Return>", opts)
-keymap.set("n", "<A-LEFT>", ":tabprev<Return>", opts)
+keymap.set("n", "<M-Right>", ":tabnext<Return>", opts)
+keymap.set("n", "<M-Left>", ":tabprev<Return>", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
