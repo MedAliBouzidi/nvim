@@ -7,7 +7,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left toggle<CR>')
+    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left toggle<CR>")
 
     require("neo-tree").setup({
       filesystem = {
@@ -15,11 +15,10 @@ return {
           mappings = {
             -- disable split from neo-tree by mapping to none or noop
             ["S"] = "noop",
-            ["s"] = "none"
-          }
-        }
-      }
+            ["s"] = "none",
+          },
+        },
+      },
     })
-
-  end
+  end,
 }

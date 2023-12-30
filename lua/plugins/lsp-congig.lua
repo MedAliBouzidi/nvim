@@ -3,26 +3,37 @@ return {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require('mason-lspconfig').setup({
+      require("mason-lspconfig").setup({
         ensure_installed = {
-          "clangd", "jdtls", "pyright",
-          "eslint", "emmet_ls", "html", "cssls", "tailwindcss",
-          "tsserver", "jsonls", "sqlls",
-          "dockerls", "docker_compose_language_service",
-          "lua_ls", "bashls", "yamlls"
-        }
+          "clangd",
+          "jdtls",
+          "pyright",
+          "eslint",
+          "emmet_ls",
+          "html",
+          "cssls",
+          "tailwindcss",
+          "tsserver",
+          "jsonls",
+          "sqlls",
+          "dockerls",
+          "docker_compose_language_service",
+          "lua_ls",
+          "bashls",
+          "yamlls",
+        },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require('lspconfig')
+      local lspconfig = require("lspconfig")
       local opts = {}
 
       lspconfig.clangd.setup({})
@@ -42,10 +53,10 @@ return {
       lspconfig.bashls.setup({})
       lspconfig.yamlls.setup({})
 
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-      vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    end
-  }
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+    end,
+  },
 }

@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "nightfly"
-    end
+      vim.cmd.colorscheme("nightfly")
+    end,
   },
 }
