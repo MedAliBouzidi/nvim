@@ -16,6 +16,7 @@ return {
 				formatters.google_java_format,
         formatters.clang_format,
         formatters.isort,
+        formatters.beautysh,
 
 				-- Diagnostics
 				diagnostics.eslint_d,

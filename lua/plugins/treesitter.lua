@@ -6,6 +6,7 @@ return {
     config.setup({
       ensure_installed = {
         "c",
+        "bash",
         "lua",
         "javascript",
         "html",
