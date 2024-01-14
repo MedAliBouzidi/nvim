@@ -2,7 +2,11 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require("mason").setup()
+      require("mason").setup({
+        ensure_installed = {
+          "mypy", "ruff", "black", "pyright"
+        }
+      })
     end,
   },
   {
@@ -10,22 +14,8 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "clangd",
-          "jdtls",
-          "pyright",
-          "eslint",
-          "emmet_ls",
-          "html",
-          "cssls",
-          "tailwindcss",
-          "tsserver",
-          "jsonls",
-          "sqlls",
-          "dockerls",
-          "docker_compose_language_service",
           "lua_ls",
-          "bashls",
-          "yamlls",
+          "pyright",
         },
       })
     end,
@@ -37,22 +27,8 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local opts = {}
 
-      lspconfig.clangd.setup({ capabilities = capabilities })
-      lspconfig.jdtls.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.emmet_ls.setup({ capabilities = capabilities })
-      lspconfig.html.setup({ capabilities = capabilities })
-      lspconfig.cssls.setup({ capabilities = capabilities })
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
-      lspconfig.jsonls.setup({ capabilities = capabilities })
-      lspconfig.sqlls.setup({ capabilities = capabilities })
-      lspconfig.dockerls.setup({ capabilities = capabilities })
-      lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.bashls.setup({ capabilities = capabilities })
-      lspconfig.yamlls.setup({ capabilities = capabilities })
+      lspconfig.pyright.setup({ capabilities = capabilities, fileType = { "python" } })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
