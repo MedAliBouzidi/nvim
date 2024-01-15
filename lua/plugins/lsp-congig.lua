@@ -4,7 +4,7 @@ return {
     config = function()
       require("mason").setup({
         ensure_installed = {
-          "mypy", "ruff", "black", "pyright"
+          "mypy", "ruff", "black",
         }
       })
     end,
