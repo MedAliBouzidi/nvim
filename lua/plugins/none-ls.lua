@@ -18,9 +18,9 @@ return {
         diagnostics.pycodestyle.with({ filetypes = { "python" } }),
         diagnostics.mypy,
         diagnostics.ruff,
+        diagnostics.clang_check,
 
         -- Code Actions
-        code_actions.refactoring,
         code_actions.shellcheck,
 
       },
