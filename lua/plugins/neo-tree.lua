@@ -11,6 +11,10 @@ return {
 
     require("neo-tree").setup({
       filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false
+        },
         window = {
           mappings = {
             -- disable split from neo-tree by mapping to none or noop
