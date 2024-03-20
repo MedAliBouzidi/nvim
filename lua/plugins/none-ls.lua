@@ -10,15 +10,18 @@ return {
 
     null_ls.setup({
       sources = {
-        -- Formatter
+        -- Formatters
+        formatters.stylua,
         formatters.prettier,
         formatters.black,
+        formatters.isort,
 
         -- Diagnostics
         diagnostics.pycodestyle.with({ filetypes = { "python" } }),
         diagnostics.mypy,
         diagnostics.ruff,
         diagnostics.clang_check,
+        diagnostics.eslint_d,
 
         -- Code Actions
         code_actions.shellcheck,
